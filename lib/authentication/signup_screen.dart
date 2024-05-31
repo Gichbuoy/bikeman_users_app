@@ -22,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen>
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
           child: Column(
             children: [
 
@@ -31,14 +31,14 @@ class _SignUpScreenState extends State<SignUpScreen>
               ),
 
               const Text(
-                "Create a User\'s Account",
+                "Create A User\'s Account",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              // text fields
+              // text fields + button
               Padding(
                 padding: const EdgeInsets.all(22),
                 child: Column(
@@ -102,10 +102,36 @@ class _SignUpScreenState extends State<SignUpScreen>
 
                     const SizedBox(height: 20,),
 
+                    ElevatedButton(
+                      onPressed: ()
+                      {
 
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.purple,
+                        padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 10)
+                      ),
+                      child: const Text(
+                        "Sign Up"
+                      ),
+                    ),
 
 
                   ],
+                ),
+              ),
+
+              //text button
+              TextButton(
+                onPressed: ()
+                {
+
+                },
+                child: const Text(
+                  "Already have an Account? Login Here",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
 
