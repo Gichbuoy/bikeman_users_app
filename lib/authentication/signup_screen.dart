@@ -1,3 +1,4 @@
+import 'package:bikeman_users_app/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen>
 {
   TextEditingController userNameTextEditingController = TextEditingController();
+  TextEditingController userPhoneEditingController = TextEditingController();
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
 
@@ -64,10 +66,29 @@ class _SignUpScreenState extends State<SignUpScreen>
                     const SizedBox(height: 20,),
 
                     TextField(
+                      controller: userPhoneEditingController,
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                          labelText: "Your Phone",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
+                          ),
+                          hintText: "Your Phone",
+                          hintStyle: TextStyle()
+                      ),
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),
+                    ),
+
+                    const SizedBox(height: 20,),
+
+                    TextField(
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                          labelText: "User Email",
+                          labelText: "Your Email",
                           labelStyle: TextStyle(
                             fontSize: 14,
                           ),
@@ -87,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       obscureText: true, // for security
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                          labelText: "User Password",
+                          labelText: "Your Password",
                           labelStyle: TextStyle(
                             fontSize: 14,
                           ),
@@ -121,11 +142,12 @@ class _SignUpScreenState extends State<SignUpScreen>
                 ),
               ),
 
+
               //text button
               TextButton(
                 onPressed: ()
                 {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
                 },
                 child: const Text(
                   "Already have an Account? Login Here",
